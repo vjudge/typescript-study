@@ -12,3 +12,8 @@ npm install -g typescript
 tsc -v
 ```
 
+
+### 编译文件
+```typescript
+tsc hello-world.ts
+```
