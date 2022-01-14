@@ -129,3 +129,28 @@ account.printMeeting();
 account.report();
 
 
+// 类比较
+class Compare1 {
+    name: string;
+    constructor (name) {
+        name = this.name;
+    }
+}
+class Compare2 {
+    name: string;
+    static count: number;
+    constructor (name, count) {
+        this.name = name;
+        Compare2.count = count;
+    }
+}
+let compare1: Compare1;
+let compare2: Compare2;
+console.log(compare1 = compare2);
+console.log(compare2 = compare1);
+
+
+
+
+
+
