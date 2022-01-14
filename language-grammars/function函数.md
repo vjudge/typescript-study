@@ -27,6 +27,15 @@ function buildName(...restOfName: string[]) {
 ```
 
 
+### 函数重载
+方法是为同一个函数提供多个函数类型定义来进行函数重载
+```typescript
+function sum (x: number, y: number): number;
+function sum (x: string, y: string): string;
+function sum (x, y): any {
+    ...
+}
+```
 
 
 
