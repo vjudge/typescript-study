@@ -21,12 +21,6 @@ console.log("负无穷大: " + Number.NEGATIVE_INFINITY);
 console.log("正无穷大:" + Number.POSITIVE_INFINITY);
 
 
-// | 多种类型
-let z: number | null | undefined;
-z = 2;
-z = null;
-
-
 // never 类型
 // never 是其它类型（包括 null 和 undefined）的子类型，代表从不会出现的值
 // 意味着声明为 never 类型的变量只能被 never 类型所赋值，在函数中它通常表现为抛出异常或无法执行到终止点（例如无限循环）
