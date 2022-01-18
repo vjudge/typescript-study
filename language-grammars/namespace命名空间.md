@@ -1,4 +1,6 @@
 # namespace (命名空间)
+“内部模块”现在叫做“命名空间”。 任何使用module关键字来声明一个内部模块的地方都应该使用namespace关键字来替换
+
 目的是解决重名问题
 
 TypeScript 中命名空间使用 namespace 来定义
