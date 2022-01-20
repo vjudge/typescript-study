@@ -8,25 +8,25 @@ function forEach(items, callback): void {
 const mockCallback = jest.fn((x) => (x + 10000));
 forEach([11, 22, 33], mockCallback);
 
-test('mockCallback', () => {
+test('mock', () => {
     // mockCallback 被调用了 3 次
     expect(mockCallback.mock.calls.length).toBe(3);
 
-// 第 1 次调用的返回值是 10011
+    // 第 1 次调用的返回值是 10011
     expect(mockCallback.mock.results[0].value).toBe(10011)
 
-// 第 1 次调用的第 1 个参数是 11
+    // 第 1 次调用的第 1 个参数是 11
     expect(mockCallback.mock.calls[0][0]).toBe(11);
 
-// 第 2 次调用的第 1 个参数是 11
-    expect(mockCallback.mock.calls[2][0]).toBe(22);
+    // 第 2 次调用的第 1 个参数是 11
+    expect(mockCallback.mock.calls[1][0]).toBe(22);
 
-// 第 3 次调用的第 1 个参数是 33
-    expect(mockCallback.mock.calls[0][0]).toBe(33);
+    // 第 3 次调用的第 1 个参数是 33
+    expect(mockCallback.mock.calls[2][0]).toBe(33);
+
+    // 函数被实例化 3 次
+    expect(mockCallback.mock.instances.length).toBe(3);
 })
-
-
-
 
 
 
