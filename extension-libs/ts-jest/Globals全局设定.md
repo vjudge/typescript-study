@@ -1,4 +1,4 @@
-# 测试前后准备工作
+# 全局设定
 
 
 ### beforeEach && afterEach
