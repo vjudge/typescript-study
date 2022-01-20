@@ -2,6 +2,13 @@
 /dist
 /node_modules
 
+# tool
+package-lock.json
+yarn.lock
+
+# error
+*.error
+
 # Logs
 logs
 *.log
@@ -19,7 +26,7 @@ lerna-debug.log*
 /.nyc_output
 
 # IDEs and editors
-.idea
+/.idea
 .project
 .classpath
 .c9/
