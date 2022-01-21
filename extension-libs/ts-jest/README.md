@@ -35,14 +35,13 @@ $ yarn add --dev jest ts-jest @types/jest
 ### [异步代码]()
 
 
+### [mock函数]()
 
 
+### [全局设定]()
 
 
-
-
-
-
+### [预期]()
 
 
 
