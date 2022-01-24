@@ -26,15 +26,50 @@ npm i --save class-validator class-transformer
 * stopAtFirstError : boolean，如果设置为 true ，对于给定的属性的验证会在触发第一个错误之后停止。默认为 false
 
 
+### 参数范围
+```typescript
+@Post()
+async create(@Body(new ValidationPipe()) createDto: CreateDto) {
+}
+```
 
 
+### 方法范围
+```typescript
+@Post()
+// @UsePipes(new ValidationPipe())
+@UsePipes(ValidationPipe)
+async create(@Body() createDto: CreateDto) {
+}
+```
 
 
+### 全局范围
+```typescript
+// 全局管道用于整个应用程序、每个控制器和每个路由处理程序
+// 对于标准(非混合) 微服务应用使用 useGlobalPipes() 全局设置管道
+// 在 混合应用中 useGlobalPipes() 方法不会为网关和微服务设置管道
+app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true, // 白名单
+      errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
+      transform: true, // 根据对象的 DTO 类自动将有效负载转换为对象类型
+      dismissDefaultMessages: true,
+      exceptionFactory: (errors) => new UnprocessableEntityException(errors),
+    }),
+);
 
-
-
-
-
+// 依赖注入方式
+@Module({
+    providers: [
+        {
+            provide: APP_PIPE,
+            useClass: ValidationPipe
+        }
+    ]
+})
+export class AppModule {}
+```
 
 
 
