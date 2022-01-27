@@ -8,10 +8,6 @@ import helmet from 'helmet';
 import * as bodyParser from 'body-parser';
 import { middleware as expressCtx } from 'express-ctx';
 
-import { HttpExceptionFilter } from './filters/http-exception.filter';
-// import { QueryExceptionFilter } from './filters/query-exception.filter';
-import { LoggingInterceptor } from './Interceptors/logging.interceptor';
-
 import { ServerModule } from './server.module';
 import { ConfigService } from './config/config.service';
 
@@ -39,13 +35,12 @@ async function bootstrap(): Promise<NestExpressApplication> {
   const reflector = app.get(Reflector);
   // filters
   app.useGlobalFilters(
-    new HttpExceptionFilter(reflector),
-    // new QueryExceptionFilter(reflector)
+    // new HttpExceptionFilter(reflector),
   );
   // interceptors
   app.useGlobalInterceptors(
     new ClassSerializerInterceptor(reflector),
-    new LoggingInterceptor()
+    // new LoggingInterceptor()
   );
   // pipe
   app.useGlobalPipes(
