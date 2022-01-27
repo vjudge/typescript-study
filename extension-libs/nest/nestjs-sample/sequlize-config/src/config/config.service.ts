@@ -6,9 +6,8 @@ import * as _ from 'lodash';
 import DEBUG from 'debug';
 const debug = DEBUG('app:config:service');
 
-import { CONFIG_OPTION_PROVIDER } from '../common/constants/provider';
+import { CONFIG_OPTION_PROVIDER, configOptions } from './CONST';
 import { ConfigOptions } from './interfaces/config.interface';
-import { configOptions } from "../common/constants/CONST";
 
 @Injectable()
 export class ConfigService {

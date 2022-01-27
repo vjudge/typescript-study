@@ -1,7 +1,7 @@
 import { DynamicModule, Global, Module } from '@nestjs/common';
 
 import { ConfigService } from './config.service';
-import { CONFIG_OPTION_PROVIDER } from '../common/constants/provider';
+import { CONFIG_OPTION_PROVIDER } from './CONST';
 
 import { ConfigOptions } from './interfaces/config.interface';
 
