@@ -1,0 +1,14 @@
+{
+  "port": 9000,
+  "global_api_prefix": "/api",
+  "mysqldb": {
+    "dialect": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "database": "",
+    "username": "",
+    "password": "",
+    "autoLoadModels": true,
+    "synchronize": true
+  }
+}
